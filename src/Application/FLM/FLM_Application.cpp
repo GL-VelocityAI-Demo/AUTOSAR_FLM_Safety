@@ -264,7 +264,7 @@ static void FLM_StateDegraded(void) {
 
     /* Check degraded timeout [ECU17] FTTI */
     timeInDegraded = FLM_State.currentTime - FLM_State.degradedEntryTime;
-    if (timeInDegraded >= (FLM_FTTI_MS - FLM_SAFE_STATE_TRANSITION_MS)) {
+    if (timeInDegraded > (FLM_FTTI_MS - FLM_SAFE_STATE_TRANSITION_MS)) {
         FLM_State.currentState = FLM_STATE_SAFE;
     }
 }
